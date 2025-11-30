@@ -820,7 +820,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Add CSS for order details
-const orderDetailsCSS = `
+var orderDetailsCSS = `
     .order-details {
         background: #f8f9fa;
         padding: 1.5rem;

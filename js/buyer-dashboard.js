@@ -857,7 +857,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Add CSS for additional elements
-const additionalCSS = `
+var additionalCSS = `
     .order-details {
         background: #f8f9fa;
         padding: 1.5rem;

@@ -1,6 +1,3 @@
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-const imageminPngquant = require('imagemin-pngquant');
 const fs = require('fs');
 const path = require('path');
 
@@ -12,6 +9,18 @@ async function optimizeImages() {
     }
 
     try {
+        // Use dynamic imports for imagemin v8+ (ES modules)
+        const imageminModule = await import('imagemin');
+        const imagemin = imageminModule.default || imageminModule;
+        
+        const mozjpegModule = await import('imagemin-mozjpeg');
+        // Handle both default export and named export
+        const imageminMozjpeg = mozjpegModule.default || mozjpegModule;
+        
+        const pngquantModule = await import('imagemin-pngquant');
+        // Handle both default export and named export
+        const imageminPngquant = pngquantModule.default || pngquantModule;
+        
         const files = await imagemin(['images/*.{jpg,jpeg,png}'], {
             destination: distDir,
             plugins: [
@@ -30,6 +39,10 @@ async function optimizeImages() {
         console.log(`📁 Output directory: ${distDir}`);
     } catch (error) {
         console.error('❌ Error optimizing images:', error);
+        console.error('Error details:', error.message);
+        if (error.stack) {
+            console.error('Stack trace:', error.stack);
+        }
         process.exit(1);
     }
 }

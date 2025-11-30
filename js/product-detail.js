@@ -710,7 +710,7 @@ function showNotification(message, type = 'info') {
 }
 
 // Add CSS for contact modal
-const contactModalCSS = `
+var contactModalCSS = `
     .farmer-details {
         background: #f8f9fa;
         padding: 1rem;

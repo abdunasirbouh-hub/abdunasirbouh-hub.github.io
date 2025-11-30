@@ -9,7 +9,7 @@
     "dev": "npx live-server --port=8000 --open=/index.html",
     "build": "npm run minify-css && npm run minify-js && npm run optimize-images",
     "minify-css": "npx clean-css-cli -o css/style.min.css css/style.css",
-    "minify-js": "npx terser js/*.js -o js/script.min.js --compress --mangle",
+    "minify-js": "npx terser js/script.js js/buyer-dashboard.js js/farmer-dashboard.js js/admin-dashboard.js js/product-detail.js js/products-data.js js/consent-banner.js js/faq.js js/how-it-works.js js/newsletter.js js/setup-demo-data.js -o js/script.min.js --compress --mangle",
     "optimize-images": "node optimize-images.js",
     "deploy": "npm run build && npm run upload-to-s3",
     "upload-to-s3": "aws s3 sync . s3://agrilinkethiopia --delete --exclude '.git/*' --exclude 'node_modules/*' --exclude 'README.md' --exclude 'package*.json'",
