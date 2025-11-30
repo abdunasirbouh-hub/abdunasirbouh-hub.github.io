@@ -1,0 +1,87 @@
+{
+  "name": "agrilinkethiopia",
+  "version": "1.0.0",
+  "description": "A comprehensive e-commerce agricultural marketplace connecting Ethiopian farmers with buyers",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx serve . -p 8000",
+    "dev": "npx live-server --port=8000 --open=/index.html",
+    "build": "npm run minify-css && npm run minify-js && npm run optimize-images",
+    "minify-css": "npx clean-css-cli -o css/style.min.css css/style.css",
+    "minify-js": "npx terser js/*.js -o js/script.min.js --compress --mangle",
+    "optimize-images": "npx imagemin images/* --out-dir=dist/images",
+    "deploy": "npm run build && npm run upload-to-s3",
+    "upload-to-s3": "aws s3 sync . s3://agrilinkethiopia --delete --exclude '.git/*' --exclude 'node_modules/*' --exclude 'README.md' --exclude 'package*.json'",
+    "test": "npm run validate-html && npm run validate-css && npm run lint-js",
+    "validate-html": "npx html-validate *.html",
+    "validate-css": "npx stylelint css/*.css",
+    "lint-js": "npx eslint js/*.js",
+    "analyze": "npx bundle-analyzer dist/bundle.js",
+    "preview": "npm run build && npx serve dist -p 9000"
+  },
+  "keywords": [
+    "agriculture",
+    "marketplace",
+    "ethiopia",
+    "e-commerce",
+    "farmers",
+    "buyers",
+    "organic",
+    "local-produce",
+    "telebirr",
+    "mobile-money"
+  ],
+  "author": {
+    "name": "AgrilinkEthiopia Team",
+    "email": "info@agrilinkethiopia.et",
+    "url": "https://agrilinkethiopia.et"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agrilinkethiopia/agrilinkethiopia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/agrilinkethiopia/agrilinkethiopia/issues"
+  },
+  "homepage": "https://agrilinkethiopia.et",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "terser": "^5.19.2",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1",
+    "html-validate": "^8.2.0",
+    "stylelint": "^15.10.1",
+    "eslint": "^8.45.0",
+    "bundle-analyzer": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "files": [
+    "*.html",
+    "css/**/*",
+    "js/**/*",
+    "images/**/*",
+    "dist/**/*"
+  ],
+  "config": {
+    "port": 8000,
+    "host": "localhost"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://www.patreon.com/agrilinkethiopia"
+  }
+}

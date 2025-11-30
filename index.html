@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgrilinkEthiopia - Connect Ethiopian Farmers with Buyers</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced-colors.css">
+    <link rel="stylesheet" href="css/consent-banner.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="#home" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit;">
+                        <img src="images/logo.svg" alt="AgrilinkEthiopia" class="logo">
+                        <span class="brand-name">AgrilinkEthiopia</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#categories" class="nav-link">Categories</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn btn-outline" onclick="showLoginModal()">Login</button>
+                    <button class="btn btn-primary" onclick="showSignupModal()">Sign Up</button>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Enhanced Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Connecting Ethiopian Farmers with Buyers Nationwide</h1>
+                <p class="hero-subtitle">Your trusted marketplace for fresh agricultural products, directly from local farmers to your doorstep. Quality produce, fair prices, and sustainable farming.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" onclick="showSignupModal()">🌾 Start Buying</button>
+                    <button class="btn btn-secondary btn-large" onclick="scrollToProducts()">🛍️ Browse Products</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero_bg.png" alt="Ethiopian Farm Landscape">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose AgrilinkEthiopia?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="images/icon-products.png" alt="Fresh Produce"></div>
+                    <h3>Fresh Produce</h3>
+                    <p>Direct from Ethiopian farms to ensure maximum freshness and quality</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="images/icon-farmer.png" alt="Verified Farmers"></div>
+                    <h3>Verified Farmers</h3>
+                    <p>All farmers are verified and approved by our admin team</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="images/icon-growth.png" alt="Fair Prices"></div>
+                    <h3>Fair Prices</h3>
+                    <p>No middlemen - better prices for both farmers and buyers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><img src="images/icon-phone.png" alt="Mobile Friendly"></div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Optimized for low-bandwidth connections and mobile devices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterByCategory('vegetables')">
+                    <img src="images/vegetable-market.jpg" alt="Fresh Vegetables">
+                    <h3>Vegetables</h3>
+                    <span class="category-count">15 Products</span>
+                </div>
+                <div class="category-card" onclick="filterByCategory('fruits')">
+                    <img src="images/mango.jpg" alt="Tropical Fruits">
+                    <h3>Fruits</h3>
+                    <span class="category-count">12 Products</span>
+                </div>
+                <div class="category-card" onclick="filterByCategory('grains')">
+                    <img src="images/wheat-sack.jpg" alt="Ethiopian Grains">
+                    <h3>Grains</h3>
+                    <span class="category-count">5 Products</span>
+                </div>
+                <div class="category-card" onclick="filterByCategory('spices')">
+                    <img src="images/chili.jpg" alt="Ethiopian Spices">
+                    <h3>Spices</h3>
+                    <span class="category-count">5 Products</span>
+                </div>
+                <div class="category-card" onclick="filterByCategory('legumes')">
+                    <img src="images/legumes-collection.jpg" alt="Fresh Legumes">
+                    <h3>Legumes</h3>
+                    <span class="category-count">10 Products</span>
+                </div>
+                <div class="category-card" onclick="filterByCategory('dairy')">
+                    <img src="images/milk.jpg" alt="Fresh Dairy">
+                    <h3>Dairy Products</h3>
+                    <span class="category-count">9 Products</span>
+                </div>
+                <div class="category-card" onclick="filterByCategory('coffee')">
+                    <img src="images/coffee-plant.jpg" alt="Ethiopian Coffee">
+                    <h3>Coffee</h3>
+                    <span class="category-count">5 Products</span>
+                </div>
+                <div class="category-card" onclick="filterByCategory('tubers')">
+                    <img src="images/turnips.jpg" alt="Tubers">
+                    <h3>Tubers</h3>
+                    <span class="category-count">5 Products</span>
+                </div>
+                <div class="category-card" onclick="filterByCategory('oilseeds')">
+                    <img src="images/sunflower-oil.jpg" alt="Oilseeds">
+                    <h3>Oilseeds</h3>
+                    <span class="category-count">4 Products</span>
+                </div>
+                <div class="category-card" onclick="filterByCategory('pulses')">
+                    <img src="images/lentils.jpg" alt="Pulses">
+                    <h3>Pulses</h3>
+                    <span class="category-count">9 Products</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="filter-bar">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+                    <button onclick="searchProducts()">🔍</button>
+                </div>
+                <select id="locationFilter" onchange="filterByLocation()">
+                    <option value="">All Locations</option>
+                    <option value="addis-ababa">Addis Ababa</option>
+                    <option value="dire-dawa">Dire Dawa</option>
+                    <option value="mekelle">Mekelle</option>
+                    <option value="gondar">Gondar</option>
+                    <option value="bahirdar">Bahirdar</option>
+                    <option value="hawassa">Hawassa</option>
+                </select>
+                <select id="sortFilter" onchange="sortProducts()">
+                    <option value="newest">Newest First</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+            <div class="load-more">
+                <button class="btn btn-outline" onclick="loadMoreProducts()">Load More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number">1,250+</h3>
+                    <p class="stat-label">Registered Farmers</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number">8,450+</h3>
+                    <p class="stat-label">Active Buyers</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number">15,000+</h3>
+                    <p class="stat-label">Products Listed</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number">ETB 2.5M+</h3>
+                    <p class="stat-label">Monthly Transactions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/logo.svg" alt="AgrilinkEthiopia" class="footer-logo">
+                        <h4>AgrilinkEthiopia</h4>
+                        <p>Connecting Ethiopian farmers with buyers nationwide for a sustainable agricultural future.</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Farmers</h4>
+                    <ul>
+                        <li><a href="farmer-dashboard.html">Farmer Dashboard</a></li>
+                        <li><a href="#">Selling Guidelines</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>For Buyers</h4>
+                    <ul>
+                        <li><a href="buyer-dashboard.html">Buyer Dashboard</a></li>
+                        <li><a href="#">Buying Guide</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>📞 +251 911 234 567</p>
+                    <p>📧 info@agrilinkethiopia.et</p>
+                    <p>📍 Bole, Addis Ababa, Ethiopia</p>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgrilinkEthiopia. All rights reserved. | <a href="privacy-plain.html">Privacy Policy</a> | <a href="terms-plain.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Login</button>
+                <p class="form-footer">Don't have an account? <a href="#" onclick="switchToSignup()">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Create Your Account</h2>
+            <form id="signupForm" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>I am a:</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="userType" value="farmer" onchange="toggleFarmerFields()" required>
+                            <span>Farmer (Sell Products)</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="userType" value="buyer" onchange="toggleFarmerFields()" required>
+                            <span>Buyer (Purchase Products)</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPhone">Phone Number</label>
+                    <input type="tel" id="signupPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupLocation">Location</label>
+                    <select id="signupLocation" required>
+                        <option value="">Select your region</option>
+                        <option value="addis-ababa">Addis Ababa</option>
+                        <option value="dire-dawa">Dire Dawa</option>
+                        <option value="mekelle">Mekelle</option>
+                        <option value="gondar">Gondar</option>
+                        <option value="bahirdar">Bahirdar</option>
+                        <option value="hawassa">Hawassa</option>
+                    </select>
+                </div>
+                <div class="form-group" id="profilePictureGroup" style="display: none;">
+                    <label for="profilePicture">Profile Picture <span style="color: #ef4444;">*</span></label>
+                    <div id="profilePreview" style="width: 100px; height: 100px; border-radius: 50%; background: #f0f0f0; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; border: 2px solid #ddd;">
+                        <span style="font-size: 3rem;">👤</span>
+                    </div>
+                    <input type="file" id="profilePicture" accept="image/*" onchange="previewProfileImage(event)">
+                    <small style="color: #666; display: block; margin-top: 5px;">Please upload your profile picture (required for farmers)</small>
+                </div>
+                <div class="form-group" id="farmInfoGroup" style="display: none;">
+                    <label for="farmSize">Farm Size (hectares)</label>
+                    <input type="number" id="farmSize" min="0" step="0.1" placeholder="Enter farm size">
+                </div>
+                <div class="form-group" id="experienceGroup" style="display: none;">
+                    <label for="experience">Years of Farming Experience</label>
+                    <input type="number" id="experience" min="0" placeholder="Enter years of experience">
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                <p class="form-footer">Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
